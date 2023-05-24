@@ -17,6 +17,7 @@ namespace UdemyBerkProject1.UIs
             GameManager.Instance.OnScoreChanged += HandleOnScoreChanged;
             HandleOnScoreChanged();
         }
+
         private void OnDisable()
         {
             GameManager.Instance.OnScoreChanged -= HandleOnScoreChanged;
