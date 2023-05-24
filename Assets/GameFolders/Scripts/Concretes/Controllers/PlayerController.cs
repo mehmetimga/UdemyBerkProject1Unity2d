@@ -13,7 +13,7 @@ namespace UdemyBerkProject1.Controllers
         Jump _jump;
         PcInputController _input;
         LaunhProjectile _launchProjectile;
-
+        AudioSource _audioSource;
         void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -21,6 +21,7 @@ namespace UdemyBerkProject1.Controllers
             _launchProjectile = GetComponent<LaunhProjectile>();
 
             _input = new PcInputController();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -42,14 +43,10 @@ namespace UdemyBerkProject1.Controllers
             if (_isLeftMouseClicked)
             {
                 _jump.JumpAction(_rigidbody2D);
-
+                _audioSource.Play();
                 _isLeftMouseClicked = false;
             }
             
-        }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            GameManager.Instance.RestartGame();
         }
     }
 }
