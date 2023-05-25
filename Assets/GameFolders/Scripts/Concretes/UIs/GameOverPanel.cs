@@ -7,11 +7,11 @@ namespace UdemyBerkProject1.UIs
     {
         public void YesButtonClick()
         {
-            GameManager.Instance.RestartGame();
+            GameManager.Instance.StartGame();
         }
         public void NoButtonClick()
         {
-
+            GameManager.Instance.ReturnMenu();
         }
     }
 }
