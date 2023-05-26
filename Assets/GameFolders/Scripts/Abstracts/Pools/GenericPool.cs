@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UdemyBerkProject1.Combats;
 using UnityEngine;
 namespace UdemyBerkProject1.Abstracts.Pools
 {
@@ -14,6 +15,17 @@ namespace UdemyBerkProject1.Abstracts.Pools
         private void Awake()
         {
             SingletonObject();
+        }
+
+        private void OnEnable()
+        {
+            GameManager.Instance.OnSceneChanged += ResetAllObjects;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.OnSceneChanged -= ResetAllObjects;
+
         }
 
         private void Start()
@@ -31,6 +43,9 @@ namespace UdemyBerkProject1.Abstracts.Pools
             }
             return _poolPrefabs.Dequeue();
         }
+
+        public abstract void ResetAllObjects();
+
 
         private void GrowPoolPrefabs()
         {

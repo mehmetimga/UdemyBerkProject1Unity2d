@@ -14,12 +14,14 @@ namespace UdemyBerkProject1.Controllers
         PcInputController _input;
         LaunhProjectile _launchProjectile;
         AudioSource _audioSource;
+        Dead _dead;
+
         void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _jump = GetComponent<Jump>();
             _launchProjectile = GetComponent<LaunhProjectile>();
-
+            _dead = GetComponent<Dead>();
             _input = new PcInputController();
             _audioSource = GetComponent<AudioSource>();
         }
@@ -27,6 +29,8 @@ namespace UdemyBerkProject1.Controllers
         // Update is called once per frame
         void Update()
         {
+            if (_dead.IsDead) return;
+
             if (_input.LeftMouseClickDown)
             {
                 _isLeftMouseClicked = true;
