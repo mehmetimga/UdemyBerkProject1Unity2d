@@ -16,13 +16,10 @@ namespace UdemyBerkProject1.UIs
         {
             Dead dead = FindObjectOfType<Dead>();
             dead.OnDead += HandleOnDead;
-            Debug.Log("GameCanvas-Start");
-
         }
 
         private void HandleOnDead()
         {
-            Debug.Log("HandleOnDead");
             gameOverPanel.SetActive(true);
         }
     }

@@ -10,6 +10,7 @@ namespace UdemyBerkProject1.Spawners
         protected override void Spawn()
         {
             EnemyController poolEnemy = ObstaclePool.Instance.Get();
+            poolEnemy.transform.position = new Vector3(10, -6, 0); //this.transform.position;
             poolEnemy.gameObject.SetActive(true);
         }
     }

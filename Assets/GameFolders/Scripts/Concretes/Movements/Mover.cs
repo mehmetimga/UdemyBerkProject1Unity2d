@@ -16,6 +16,7 @@ namespace UdemyBerkProject1.Movements
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
+
         private void OnEnable()
         {
             _rigidbody2D.velocity = SelectNewDirection() * moveSpeed;
@@ -23,15 +24,18 @@ namespace UdemyBerkProject1.Movements
 
         private Vector2 SelectNewDirection()
         {
-            
+            Vector2 selectedDirection;
+
             if (direction == DirectionEnum.Left)
             {
-                return Vector2.left;
+                selectedDirection = Vector2.left;
             }
             else
             {
-                return Vector2.right;
+                selectedDirection = Vector2.right;
             }
+
+            return selectedDirection;
         }
     }
 }

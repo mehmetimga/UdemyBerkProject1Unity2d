@@ -1,11 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UdemyBerkProject1.Combats;
 using UnityEngine;
+
 namespace UdemyBerkProject1.Abstracts.Pools
 {
-    public abstract class GenericPool<T> : MonoBehaviour where T:Component
+    public abstract class GenericPool<T> : MonoBehaviour where T : Component
     {
         [SerializeField] T[] prefabs;
         [SerializeField] int countLoop = 5;
@@ -25,12 +25,11 @@ namespace UdemyBerkProject1.Abstracts.Pools
         private void OnDisable()
         {
             GameManager.Instance.OnSceneChanged -= ResetAllObjects;
-
         }
 
         private void Start()
         {
-            GrowPoolPrefabs();
+            GrowPoolPrefab();
         }
 
         protected abstract void SingletonObject();
@@ -39,20 +38,20 @@ namespace UdemyBerkProject1.Abstracts.Pools
         {
             if (_poolPrefabs.Count == 0)
             {
-                GrowPoolPrefabs();
+                GrowPoolPrefab();
             }
+
             return _poolPrefabs.Dequeue();
         }
 
         public abstract void ResetAllObjects();
 
-
-        private void GrowPoolPrefabs()
+        private void GrowPoolPrefab()
         {
-            for(int i=0;i<countLoop;i++)
+            for (int i = 0; i < countLoop; i++)
             {
-                T newPrefab = Instantiate(prefabs[UnityEngine.Random.Range(0, prefabs.Length)]);
-                newPrefab.transform.parent = transform;
+                T newPrefab = Instantiate(prefabs[Random.Range(0, prefabs.Length)]);
+                newPrefab.transform.parent = this.transform;
                 newPrefab.gameObject.SetActive(false);
                 _poolPrefabs.Enqueue(newPrefab);
             }
@@ -62,7 +61,6 @@ namespace UdemyBerkProject1.Abstracts.Pools
         {
             poolObject.gameObject.SetActive(false);
             _poolPrefabs.Enqueue(poolObject);
-
         }
     }
 }

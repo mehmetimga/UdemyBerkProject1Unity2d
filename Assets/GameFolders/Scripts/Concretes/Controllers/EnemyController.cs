@@ -10,7 +10,7 @@ namespace UdemyBerkProject1.Controllers
     {
         public override void KillGameObject()
         {
-            _currentLifeTime = 0f;
+            _currentTime = 0f;
             SetEnemyPool();
         }
 

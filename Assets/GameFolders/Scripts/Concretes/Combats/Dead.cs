@@ -12,8 +12,6 @@ namespace UdemyBerkProject1.Combats
 
         private void OnCollisionEnter2D(Collision2D collision)
         {
-            Debug.Log("Dead-OnCollisionEnter2D");
-
             _isDead = true;
             OnDead?.Invoke();
             Time.timeScale = 0;

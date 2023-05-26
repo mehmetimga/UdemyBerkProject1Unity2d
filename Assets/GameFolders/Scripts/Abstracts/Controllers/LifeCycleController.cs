@@ -8,14 +8,15 @@ namespace UdemyBerkProject1.Abstracts.Contollers
     {
         [SerializeField] float maxLifeTime = 5f;
 
-        protected float _currentLifeTime;
+        protected float _currentTime;
 
         private void Update()
         {
-            _currentLifeTime += Time.deltaTime;
-            if (_currentLifeTime > maxLifeTime)
+            _currentTime += Time.deltaTime;
+
+            if (_currentTime > maxLifeTime)
             {
-                Destroy(this.gameObject);
+                KillGameObject();
             }
         }
 
