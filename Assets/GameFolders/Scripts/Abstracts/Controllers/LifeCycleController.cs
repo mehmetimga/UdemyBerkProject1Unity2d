@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace UdemyBerkProject1.Abstracts.Contollers
 {
-    public class LifeCycleController : MonoBehaviour
+    public abstract class LifeCycleController : MonoBehaviour
     {
         [SerializeField] float maxLifeTime = 5f;
 
-        float _currentLifeTime;
+        protected float _currentLifeTime;
 
         private void Update()
         {
@@ -18,6 +18,8 @@ namespace UdemyBerkProject1.Abstracts.Contollers
                 Destroy(this.gameObject);
             }
         }
+
+        public abstract void KillGameObject();
     }
 }
 

@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &22844300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22844301}
+  m_Layer: 0
+  m_Name: RedDragonPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &22844301
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22844300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &283209645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2283506899682729841, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
@@ -300,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 2283506899682729847, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
       propertyPath: m_Name
       value: RedDragonSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283506899682729847, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
@@ -529,6 +564,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1327956413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327956415}
+  - component: {fileID: 1327956414}
+  m_Layer: 0
+  m_Name: ObstaclePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1327956414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327956413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a52a4099e83455fb29e3d3f49a7fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 3412996076108016125, guid: d7e646daee3944e598cc6972709beaed, type: 3}
+  - {fileID: 5146699621630107316, guid: 93bb3ac4706ac479d8883aed609b45b7, type: 3}
+  - {fileID: 3021382224042738428, guid: 98b7f29eaa3bb4f9aa9e8b7c806f68f3, type: 3}
+  - {fileID: 7175821742689880237, guid: 2dcf56623fa2b4d81894256353bddc83, type: 3}
+  countLoop: 5
+--- !u!4 &1327956415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327956413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1328645838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2283506899682729841, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
@@ -662,6 +747,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedDragonSpawner (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2283506899682729847, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
 --- !u!1001 &2283506898937654716
@@ -718,6 +807,10 @@ PrefabInstance:
     - target: {fileID: 2283506899682729847, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
       propertyPath: m_Name
       value: RedDragonSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283506899682729847, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca858ad7673af4e87a7f0a227a59fca7, type: 3}
@@ -845,6 +938,10 @@ PrefabInstance:
     - target: {fileID: 6127499456980805448, guid: 972c32da8d844456aac766370776b4b0, type: 3}
       propertyPath: m_Name
       value: ObstableSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127499456980805448, guid: 972c32da8d844456aac766370776b4b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6127499456980805449, guid: 972c32da8d844456aac766370776b4b0, type: 3}
       propertyPath: m_RootOrder
